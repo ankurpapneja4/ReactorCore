@@ -5,8 +5,6 @@ import reactor.core.publisher.Mono;
 
 import java.util.function.Consumer;
 
-import static example.reactor.core.Utils.await;
-
 public class MonoTest {
 
     BookRepository bookRepository = new BookRepository();
@@ -23,6 +21,19 @@ public class MonoTest {
         publisher.subscribe( subscriber );
 
     }
+
+    @Test
+    void monoJustExample(){
+
+        // Publisher
+        Mono<Integer> publisher = Mono.just( 20);
+
+        // Subscriber
+        publisher.subscribe( this::printSquare );
+
+    }
+
+    public void printSquare(int i){ System.out.println( i*i ); }
 
 
 }
