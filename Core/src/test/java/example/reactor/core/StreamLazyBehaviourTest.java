@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.stream.IntStream;
 
+import static example.reactor.core.Utils.await;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class StreamLazyBehaviourTest {
@@ -57,6 +58,4 @@ public class StreamLazyBehaviourTest {
         return i * i;
     }
 
-    public void await(long millis){
-        try { Thread.sleep( 2000); } catch (InterruptedException exp) { exp.printStackTrace(); } }
 }
